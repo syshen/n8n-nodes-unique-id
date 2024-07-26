@@ -6,6 +6,7 @@ import {
 } from 'n8n-workflow';
 
 let counter = 0;
+let currentDateStr = '';
 
 export class UniqueID implements INodeType {
 	description: INodeTypeDescription = {
@@ -32,10 +33,18 @@ export class UniqueID implements INodeType {
 		const day = String(now.getDate()).padStart(2, '0');
 		const hours = String(now.getHours()).padStart(2, '0');
 		const minutes = String(now.getMinutes()).padStart(2, '0');
-		// const seconds = String(now.getSeconds()).padStart(2, '0');
+		const dateStr = `${year}${month}${day}${hours}${minutes}`;
+		if (dateStr !== currentDateStr) {
+			currentDateStr = dateStr;
+			counter = 0;
+		}
+		const counterStr = String(counter).padStart(4, '0');
 
-		const str = `${year}${month}${day}${hours}${minutes}${counter}`;
+		const str = `${dateStr}${counterStr}`;
 		counter ++;
+		if (counter > 9999) {
+			counter = 0;
+		}
 		return this.prepareOutputData([{ json: {
 			identity: str
 		}}]);
