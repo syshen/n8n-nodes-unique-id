@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-unique-id",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "Generate an unique identity key",
 	"keywords": [
 		"n8n-community-node-package"
