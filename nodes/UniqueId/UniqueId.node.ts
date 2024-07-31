@@ -8,7 +8,7 @@ import {
 let counter = 0;
 let currentDateStr = '';
 
-export class UniqueID implements INodeType {
+export class UniqueId implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Unique Identity Generator',
 		name: 'uniqueId',
