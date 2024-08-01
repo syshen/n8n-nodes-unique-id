@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-unique-id",
-	"version": "0.1.4",
+	"version": "0.1.8",
 	"description": "Generate an unique identity key",
 	"keywords": [
 		"n8n-community-node-package"
@@ -15,11 +15,6 @@
 		"type": "git",
 		"url": "https://github.com/syshen/n8n-nodes-unique-id.git"
 	},
-	"engines": {
-		"node": ">=18.10",
-		"pnpm": ">=9.1"
-	},
-	"packageManager": "pnpm@9.1.4",
 	"main": "index.js",
 	"scripts": {
 		"preinstall": "npx only-allow pnpm",
